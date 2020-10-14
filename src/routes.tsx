@@ -7,8 +7,8 @@ function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={Landing} />
-        <Route path='/app' component={OrphanagesMap} />
+        <Route path="/" exact component={Landing} />
+        <Route path="/app" component={OrphanagesMap} />
       </Switch>
     </BrowserRouter>
   )
