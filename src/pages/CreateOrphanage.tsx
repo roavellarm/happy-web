@@ -42,12 +42,15 @@ export default function CreateOrphanage() {
     data.append('open_on_weekends', String(open_on_weekends))
     images.forEach(image => data.append('images', image))
 
-    await api.post('orphanages', data)
-
-    // eslint-disable-next-line no-alert
-    alert('Cadastro realizado com sucesso')
-
-    push('/app')
+    try {
+      await api.post('orphanages', data)
+      // eslint-disable-next-line no-alert
+      alert('Cadastro realizado com sucesso')
+      return push('/app')
+    } catch (error) {
+      // eslint-disable-next-line no-alert
+      return alert('Ouve algum problema no cadastro')
+    }
   }
 
   const handleSelectImages = (event: ChangeEvent<HTMLInputElement>) => {
